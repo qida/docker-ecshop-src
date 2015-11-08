@@ -28,8 +28,9 @@ RUN chmod 755 /*.sh
 # Configure /app folder with sample app
 RUN mkdir -p /app/upload && mkdir -p /app/kod && rm -fr /var/www/html && ln -s /app /var/www/html
 VOLUME /app/upload
-COPY ./KODExplorer /app/kod
-COPY ./ecshop /app
+#download kod
+ADD http://7xo5s9.dl1.z0.glb.clouddn.com/net2ftp_v1.0.zip /app/kod/
+ADD http://7xo5s9.dl1.z0.glb.clouddn.com/ecshop.zip /app/
 EXPOSE 80
 WORKDIR /app
 CMD ["/run.sh"]
