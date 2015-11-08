@@ -33,9 +33,9 @@ RUN git clone https://github.com/kalcaddle/KODExplorer.git /app/kod
 #RUN mkdir -p /app/upload
 #VOLUME /app/upload
 #download ecshop
+WORKDIR /app
 ADD http://7xo5s9.dl1.z0.glb.clouddn.com/ecshop-2.7.3.zip /app
 RUN unzip /app/ecshop-2.7.3.zip -d /app
 EXPOSE 80
-WORKDIR /app
 CMD ["/run.sh"]
 #http://download.ecshop.com/2.7.3/ECShop_V2.7.3_UTF8_release1106.rar
