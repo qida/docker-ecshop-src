@@ -33,7 +33,7 @@ VOLUME /app/upload
 #download kod
 RUN git clone https://github.com/kalcaddle/KODExplorer.git /app
 ADD http://7xo5s9.dl1.z0.glb.clouddn.com/ecshop.zip /app/
-RUN unzip /app/ecshop.zip -d /app
+RUN unzip /app/ecshop.zip -d /app/
 EXPOSE 80
 WORKDIR /app
 CMD ["/run.sh"]
