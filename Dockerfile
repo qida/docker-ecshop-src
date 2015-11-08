@@ -28,7 +28,7 @@ ADD run.sh /run.sh
 RUN chmod 755 /*.sh
 
 # Configure /app folder with sample app
-RUN mkdir -p /app/upload && mkdir -p /app/kod && rm -fr /var/www/html && ln -s /app /var/www/html
+RUN mkdir -p /app/upload && rm -fr /var/www/html && ln -s /app /var/www/html
 VOLUME /app/upload
 #download kod
 RUN git clone https://github.com/kalcaddle/KODExplorer.git /app
