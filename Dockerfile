@@ -35,7 +35,7 @@ RUN rm -Rf /app/kod/.git
 RUN mkdir /app/upload
 VOLUME /app/upload
 #download ecshop
-ADD http://7xo5s9.dl1.z0.glb.clouddn.com/ecshop.zip /app/
+ADD http://7xo5s9.dl1.z0.glb.clouddn.com/ecshop.zip /app
 RUN unzip /app/ecshop.zip -d /app
 EXPOSE 80
 WORKDIR /app
