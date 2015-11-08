@@ -4,6 +4,7 @@ MAINTAINER Allen <sunqida@foxmail.com>
 # Install base packages
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -yq install \
+        git \
         zip \
         curl \
         apache2 \
@@ -30,8 +31,7 @@ RUN chmod 755 /*.sh
 RUN mkdir -p /app/upload && mkdir -p /app/kod && rm -fr /var/www/html && ln -s /app /var/www/html
 VOLUME /app/upload
 #download kod
-ADD http://7xo5s9.dl1.z0.glb.clouddn.com/net2ftp_v1.0.zip /app/kod/
-RUN unzip /app/kod/net2ftp_v1.0.zip -d /app/kod
+RUN git clone https://github.com/kalcaddle/KODExplorer.git /app
 ADD http://7xo5s9.dl1.z0.glb.clouddn.com/ecshop.zip /app/
 RUN unzip /app/ecshop.zip -d /app
 EXPOSE 80
