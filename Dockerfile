@@ -31,7 +31,7 @@ RUN chmod 755 /*.sh
 RUN mkdir /app && rm -fr /var/www/html && ln -s /app /var/www/html
 
 RUN git clone https://github.com/kalcaddle/KODExplorer.git /app
-
+RUN rm -Rf /app/.git
 RUN mkdir /app/upload
 VOLUME /app/upload
 #download ecshop
