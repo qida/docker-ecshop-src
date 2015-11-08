@@ -28,10 +28,10 @@ ADD run.sh /run.sh
 RUN chmod 755 /*.sh
 
 # Configure /app folder with sample app
-RUN mkdir /app && rm -fr /var/www/html && ln -s /app /var/www/html
+RUN mkdir -p /app/kod && rm -fr /var/www/html && ln -s /app /var/www/html
 
-RUN git clone https://github.com/kalcaddle/KODExplorer.git /app
-RUN rm -Rf /app/.git
+RUN git clone https://github.com/kalcaddle/KODExplorer.git /app/kod
+RUN rm -Rf /app/kod/.git
 RUN mkdir /app/upload
 VOLUME /app/upload
 #download ecshop
